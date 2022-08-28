@@ -18,13 +18,35 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Input Search */
+.search-data {
+    transform: scale(0.7,0.7);
+}
+
+.pokemon {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.pokemon-sel {
+    width: 100%;
+    text-transform: capitalize;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
 /* Pagination */
 .pagination {
     /* display: flex;
     justify-content: center; */
-    position: absolute;
+    position: sticky;
     bottom: 0;
     left: 42%;
+    z-index: 300;
 }
 
 .pagn {
