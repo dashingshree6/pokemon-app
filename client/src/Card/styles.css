@@ -1,12 +1,52 @@
 .card {
-    width: 8rem;
-    margin-bottom: 1rem;
+    display: flex;
+    /* width: 50%; */
+    margin-bottom: 4%;
     /* margin: 1%; */
+    padding: 2px;
+    transform: scale(0.95,0.95);
+}
+.card:hover {
+    z-index: 100;
+    box-shadow:5px 5px 10px rgb(52, 91, 129);
+    /* transform: scale(1.2,1.2);
+    transition: 1s; */
+}
+
+.card-sec {
+    display: flex;
+    flex-direction: row;
+}
+
+.card-left {
+    width: 10rem;
+    border-right: 1px solid gainsboro;
+    padding-top: 1.5rem;
+}
+
+.card-right {
+    width: 100%;
+    height: inherit;
+    transform: scale(0.9,0.9);
 }
 
 .title {
     font-size: small;
     text-align: center;
+}
+
+.type-title {
+    width: 100%;
+    text-align: center;
+    background-color: #0d6efd;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+.type {
+    font: small-caption;
+    color: #0d6efd;    
+    padding: 2px;
+    color: #fff;
 }
 
 .details {
@@ -19,4 +59,9 @@
 }
 .details:hover {
     opacity: 0.5;
+}
+
+.item {
+    text-align: center;
+    font-weight: bold;
 }
