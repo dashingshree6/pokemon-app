@@ -9,7 +9,6 @@ import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 
 const CardItem = (props) => {
-  var id = props.itemData.url.slice(-2,-1)
   const [pokData, setPokData] = useState({})
   var random = Math.floor(Math.random() * 10)
   var bgs = ["gray","maroon","purple","olive","navy","teal","brown","darkred","dimgrey","peru"]
@@ -18,10 +17,14 @@ const CardItem = (props) => {
   const handleShow = () => setShow(true);
 
   const fetchPokemon = () => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(res => res.json()).then(response => {setPokData(response)}).catch(err => console.log(err))
+    fetch(`${props.itemData.url}`).then(res => res.json())
+      .then(response => {
+        setPokData(response);
+      })
+      .catch(err => console.log(err))
   }
   useEffect(() => {
-    fetchPokemon()
+    fetchPokemon() 
   },[])
 
   const data= pokData.stats && [
@@ -40,7 +43,7 @@ const CardItem = (props) => {
       {pokData.id &&
             <div className="card-sec">
               <div className="card-left">                    
-                <Card.Img variant="top" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`} />
+                <Card.Img variant="top" src={pokData.sprites && pokData.sprites.front_default} />
                 <Card.Body>
                   <Card.Title className="title">{(pokData.name).toUpperCase()}</Card.Title>
                 </Card.Body>
